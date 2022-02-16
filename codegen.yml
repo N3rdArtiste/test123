@@ -1,0 +1,15 @@
+overwrite: true
+schema: 'https://yia-cms-qa.dev.eks.cucumbersoftware.com/graphql'
+documents: 'src/schemas/*.gql'
+config:
+    withHooks: false
+    useTypeImports: true
+generates:
+    src/_config/typeDefs/graphql-generated.d.ts:
+        plugins:
+            - 'typescript'
+            - 'typescript-operations'
+            - 'urql-svelte-operations-store'
+    src/_config/graphql-tags/graphql-tags-generated.ts:
+        plugins:
+            - 'typescript-urql'
